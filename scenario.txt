@@ -1,0 +1,13 @@
+- 파일 업로드 기능을 활용하여 공격
+- 웹쉘을 업로드하여 해당 서버의 정보 수집
+
+도구 : burpsuite
+
+1. 업로드 경로 파악하기
+- 버프 스위트로 download.php?filename=[파일명] 리피터 보내기 -> 응답에 소스코드 출력됨
+
+2. ../download.php 시도 -> 허용되지 않은 문자
+
+3. download.php?filename에 ? 삽입해서 에러 발생시켜보기 filename=?hey.php -> 경로 출력 upload/
+
+4. url에 upload/hey.php?cmd=[명령어] 공격 완료
